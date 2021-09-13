@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
 
 // 定数
 const n int = 1
@@ -27,14 +31,28 @@ func main() {
 
 	// }
 
-	for i := 0; i <= 100; i = i + 1 {
-		if i%2 == 1 {
-			fmt.Print(i)
-			fmt.Print("奇数")
-		} else {
-			fmt.Print(i)
-			fmt.Print("偶数")
-		}
+	/// try問題実施
+	// for i := 0; i <= 100; i = i + 1 {
+	// 	if i%2 == 1 {
+	// 		fmt.Print(i)
+	// 		fmt.Print("奇数")
+	// 	} else {
+	// 		fmt.Print(i)
+	// 		fmt.Print("偶数")
+	// 	}
+	// }
+	t := time.Now().UnixNano()
+	rand.Seed(t)
+	s := rand.Intn(6)
+	switch s {
+	case 1:
+		fmt.Println("凶")
+	case 2, 3:
+		fmt.Println("吉")
+	case 4, 5:
+		fmt.Println("中吉")
+	case 6:
+		fmt.Println("大吉")
 	}
 
 	// 	// 特徴
